@@ -15,7 +15,6 @@ import org.pneira.apiservlet.webapp.headers.service.ProductoService;
 
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.Optional;
 
 @WebServlet("/agregar-carro")
