@@ -1,13 +1,11 @@
 package org.pneira.apiservlet.webapp.headers.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.pneira.apiservlet.webapp.headers.configs.Service;
 import org.pneira.apiservlet.webapp.headers.models.Usuario;
 import org.pneira.apiservlet.webapp.headers.repositories.UsuarioRepository;
-import org.pneira.apiservlet.webapp.headers.repositories.UsuarioRepositoryImpl;
 
-import java.sql.Connection;
+
 import java.sql.SQLException;
 import java.util.Optional;
 

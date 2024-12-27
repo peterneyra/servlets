@@ -1,12 +1,12 @@
 package org.pneira.apiservlet.webapp.headers.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
+
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.pneira.apiservlet.webapp.headers.configs.MysqlConn;
 import org.pneira.apiservlet.webapp.headers.configs.RepositoryQ;
 import org.pneira.apiservlet.webapp.headers.models.Categoria;
-import org.pneira.apiservlet.webapp.headers.models.Producto;
+
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,7 +1,6 @@
 package org.pneira.apiservlet.webapp.headers.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.Alternative;
+
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 

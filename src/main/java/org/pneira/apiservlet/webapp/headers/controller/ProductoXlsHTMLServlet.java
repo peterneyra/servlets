@@ -1,7 +1,6 @@
 package org.pneira.apiservlet.webapp.headers.controller;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,8 +11,6 @@ import org.pneira.apiservlet.webapp.headers.models.Producto;
 import org.pneira.apiservlet.webapp.headers.service.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
 import java.util.List;
 import java.util.Optional;
 

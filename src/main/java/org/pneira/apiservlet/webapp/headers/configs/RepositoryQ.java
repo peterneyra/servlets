@@ -1,8 +1,6 @@
 package org.pneira.apiservlet.webapp.headers.configs;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
 import jakarta.enterprise.inject.Stereotype;
 import jakarta.inject.Named;
 

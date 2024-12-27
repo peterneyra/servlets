@@ -1,18 +1,12 @@
 package org.pneira.apiservlet.webapp.headers.filters;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
-import org.pneira.apiservlet.webapp.headers.configs.MysqlConn;
 import org.pneira.apiservlet.webapp.headers.service.ServiceJdbcException;
-import org.pneira.apiservlet.webapp.headers.util.ConexionBaseDatosDS;
 
-import javax.naming.NamingException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
+
 
 @WebFilter("/*")
 public class ConexionDBFilter implements Filter {

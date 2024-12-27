@@ -1,16 +1,13 @@
 package org.pneira.apiservlet.webapp.headers.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
+
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import org.pneira.apiservlet.webapp.headers.configs.ProductosServicesPrincipal;
 import org.pneira.apiservlet.webapp.headers.configs.Service;
-import org.pneira.apiservlet.webapp.headers.interceptor.Logging;
 import org.pneira.apiservlet.webapp.headers.models.Categoria;
 import org.pneira.apiservlet.webapp.headers.models.Producto;
 import org.pneira.apiservlet.webapp.headers.repositories.Repository;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +33,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
 
     @Override     /*@Logging*/  // creado el LoggingInterceptor( Tons interceptamos asi este metodo)
     public List<Producto> listProducto() {
-        List<Producto> list = null;
+        List<Producto> list ;
         try {
           list   = repositoryProdJdbc.listar();
         } catch (SQLException e) {

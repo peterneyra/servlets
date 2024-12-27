@@ -1,12 +1,12 @@
 package org.pneira.apiservlet.webapp.headers.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
+
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+
 import org.pneira.apiservlet.webapp.headers.configs.MysqlConn;
 import org.pneira.apiservlet.webapp.headers.configs.RepositoryQ;
 import org.pneira.apiservlet.webapp.headers.models.Usuario;
-import org.pneira.apiservlet.webapp.headers.util.ConexionBaseDatos;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
