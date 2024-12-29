@@ -1,6 +1,5 @@
 package org.pneira.apiservlet.webapp.headers.service;
 
-
 import org.pneira.apiservlet.webapp.headers.configs.Service;
 import org.pneira.apiservlet.webapp.headers.models.Categoria;
 import org.pneira.apiservlet.webapp.headers.models.Producto;
