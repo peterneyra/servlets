@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 //@Alternative
+@SuppressWarnings("unused")
 @Service
 public class ProductoServiceImpl implements ProductoService{
 
