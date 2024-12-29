@@ -50,6 +50,7 @@ public class Producto {
         return nombre;
     }
 
+    @SuppressWarnings("unused")
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -58,6 +59,7 @@ public class Producto {
         return precio;
     }
 
+    @SuppressWarnings("unused")
     public void setPrecio(int precio) {
         this.precio = precio;
     }
@@ -74,6 +76,7 @@ public class Producto {
         return sku;
     }
 
+    @SuppressWarnings("unused")
     public void setSku(String sku) {
         this.sku = sku;
     }
@@ -82,6 +85,7 @@ public class Producto {
         return fechaRegistro;
     }
 
+    @SuppressWarnings("unused")
     public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
