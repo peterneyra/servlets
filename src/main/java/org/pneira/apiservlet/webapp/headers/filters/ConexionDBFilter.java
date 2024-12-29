@@ -7,7 +7,7 @@ import org.pneira.apiservlet.webapp.headers.service.ServiceJdbcException;
 
 import java.io.IOException;
 
-
+@SuppressWarnings("unused")
 @WebFilter("/*")
 public class ConexionDBFilter implements Filter {
 
@@ -28,7 +28,7 @@ public class ConexionDBFilter implements Filter {
             } catch ( ServiceJdbcException e) {
              //   connRequest.rollback();
                 ((HttpServletResponse) resp).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
-                e.printStackTrace();
+               // e.printStackTrace();
             }
      /*   } catch (SQLException e) {
             e.printStackTrace();
