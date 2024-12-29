@@ -12,29 +12,23 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-//@Logging            /* podemos llevarlo a anotacion grupal EstereoTipo  "SERVICE "*/
-//@ApplicationScoped //@Named("defecto")
 
-@Service        // ahora es solo semantica, sabemos que es una clase service de java enterprise
+
+@Service
 @ProductosServicesPrincipal
 public class ProductoServiceJdbcImpl implements ProductoService{
 
-    //private ProductoRepositoryJdbcImpl repositoryJdbc;  //directo con jdbc
-                                            // ahora usaremos el tipo de la interfaz repository
-                                            // para que sea mas generico, usaremos generics
+
 
 
 @SuppressWarnings("unused")
     @Inject
-    private Repository<Producto> repositoryProdJdbc;  // <<---- *** injectamos via interfaz bajo acoplamiento
+    private Repository<Producto> repositoryProdJdbc;
     @Inject
     private Repository<Categoria> repositoryCategoriaJdbc;
-/*    public ProductoServiceJdbcImpl(Connection conn) {
-        this.repositoryProdJdbc = new ProductoRepositoryJdbcImpl(conn);
-        this.repositoryCategoriaJdbc = new CategoriaRepositoryImpl(conn);
-    }*/
 
-    @Override     /*@Logging*/  // creado el LoggingInterceptor( Tons interceptamos asi este metodo)
+
+    @Override
     public List<Producto> listProducto() {
         List<Producto> list ;
         try {

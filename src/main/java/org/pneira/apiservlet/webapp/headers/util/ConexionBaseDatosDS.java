@@ -10,15 +10,13 @@ import java.sql.SQLException;
 
 public class ConexionBaseDatosDS {
 
-    /**
-     * Conexion creado para la bd
-     */
+
     public static Connection getCoonectionPeter() throws SQLException, NamingException {
         Context initContext = new InitialContext();
         Context envContext = (Context) initContext.lookup("java:/comp/env");
         DataSource ds = (DataSource) envContext.lookup("jdbc/mysqlDB");
         return ds.getConnection();
 
-        //Connection conn = ds.getConnection();
+
     }
 }

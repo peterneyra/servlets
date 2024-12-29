@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @SuppressWarnings("unused")
-@RepositoryQ   // <-- reemplazado @ApplicationScoped
+@RepositoryQ
 public class CategoriaRepositoryImpl implements Repository<Categoria>{
 
 

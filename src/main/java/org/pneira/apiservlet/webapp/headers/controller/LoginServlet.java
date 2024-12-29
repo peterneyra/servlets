@@ -14,10 +14,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.Optional;
 
-@WebServlet({"/login", "/login.html"})  // aqui dice que es html, cuando en verdad carga el login.jsp
+@WebServlet({"/login", "/login.html"})
 public class LoginServlet extends HttpServlet {
-/*    final static String USERNAME = "admin";
-    final static String PASSWORD = "12345";*/
 
     @Inject
     private LoginService lService;
@@ -28,7 +26,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //  LoginService lService = new LoginServiceSessionImpl();  // quitamos esto, y pusimos en @inject
         Optional<String> usernameOptional = lService.getUsername(req);
 
         if (usernameOptional.isPresent()) {
@@ -61,15 +58,13 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-       // UsuarioService userService = new UsuarioServiceImpl( (Connection) req.getAttribute("conn"));
         Optional<Usuario> userOpt = userService.login( username, password);
 
-        /**    HEMOS SACADO LAS COOKIES */
+
         if ( userOpt.isPresent()) {
-            /** ---------------------------- http Session ----------------------------
-             *  las sesiones se crean de forma automatica JSESSIONID */
+
             req.getSession().setAttribute("username", username);
-            /** ---------------------------------------------------------------------- */
+
 
             resp.sendRedirect(req.getContextPath() + "/login");
             resp.setStatus(HttpServletResponse.SC_OK);

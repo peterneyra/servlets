@@ -24,10 +24,7 @@ public class TransactionalInterceptor {
 
     @AroundInvoke
     public Object transactional(InvocationContext ic) throws Exception {
-        /**   clase 474 : 10 min hasta 19 min
-         * esto lo envolvemos con el manejo de transacciones. dentro de try y catch,
-         * recordar q cada metodo del service devuelve, en casoerror retorna un jbdc exception
-         *  y eso debemos capturar para hacer el rollback*/
+
 
         if ( conn.getAutoCommit()){
             conn.setAutoCommit(false);

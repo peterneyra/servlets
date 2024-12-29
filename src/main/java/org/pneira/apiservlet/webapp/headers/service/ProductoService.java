@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductoService {
-    /** se encargaria de la logica de negocio o servicio, puede estar todos los repositorio */
+
 
     List<Producto> listProducto();
 

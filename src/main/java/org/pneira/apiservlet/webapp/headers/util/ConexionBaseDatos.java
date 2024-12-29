@@ -10,8 +10,7 @@ public class ConexionBaseDatos {
     private static String user="root";
     private static String pass = "root";
 
-    /**
-     * Conexion creado para la bd */
+
     public static Connection getCoonectionPeter() throws SQLException {
         return DriverManager.getConnection(url,user, pass);
     }

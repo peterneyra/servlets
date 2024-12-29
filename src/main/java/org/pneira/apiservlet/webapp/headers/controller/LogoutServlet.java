@@ -19,14 +19,11 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //LoginService ls = new LoginServiceSessionImpl();   // <--------- session
+
         Optional<String> username = ls.getUsername(req);
         if (username.isPresent()){
             HttpSession session = req.getSession();
-            session.invalidate();  // borra si hubiera carrito de compras y todo lo guardado en la session
-            /**  Cookie userNameCookie = new Cookie("username","");
-                 userNameCookie.setMaxAge(0);
-                  resp.addCookie(userNameCookie);*/
+            session.invalidate();
         }
         resp.sendRedirect(req.getContextPath() + "/login.html");
     }

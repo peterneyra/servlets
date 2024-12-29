@@ -19,7 +19,7 @@ import java.util.List;
 public class UsuarioRepositoryImpl implements UsuarioRepository{
 
     @Inject
-    @MysqlConn //    @Named("conn")
+    @MysqlConn
     private Connection conn;
 
 

@@ -21,23 +21,23 @@ import java.util.logging.Logger;
 public class ProductoRepositoryJdbcImpl implements Repository<Producto>{
 // el productoRepo es solo una para tola la aplicacion, Lo que si por request es la Conexion para C/usuario
 
-    @Inject   /** aqui no va transient por que esta clase no se guarda en session y no implement serializable*/
+    @Inject
     private Logger log;
 
-    /** *********************************************/
-    @Inject                     // hay 3 TIPOS de crear INYECCION : x Atributo eje: <- aqui ,  via Constructor (abajo),  y la ultima via SET
-    @MysqlConn     //@Named("conn") /*  public ProductoRepositoryJdbcImpl(Connection conn) {  */
-    private Connection conn;        /*    this.conn = conn;  }  */
-    /** ************************************************/
+
+    @Inject
+    @MysqlConn
+    private Connection conn;
+
 
     @PostConstruct
     public void inicializar(){
-        //System.out.println(" Inicializando el beans " + this.getClass().getName());
+
         log.info( " Inicializando el beans " + this.getClass().getName() );
     }
     @PreDestroy
     public void destrui(){
-        //System.out.println(" Destruyendo el beans " + this.getClass().getName());
+
         log.info( " Destruyendo el beans " + this.getClass().getName() );
     }
 

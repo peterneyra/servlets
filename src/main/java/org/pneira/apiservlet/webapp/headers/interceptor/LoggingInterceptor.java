@@ -11,8 +11,7 @@ import java.util.logging.Logger;
 @Interceptor
 public class LoggingInterceptor {
 
-    /** todo: podemos hacer algo antes manejo de transacciones, interceptar algun meetodos del service,
-     * registrar algun metodol del LOG */
+
     @Inject
     private Logger log;
     @AroundInvoke

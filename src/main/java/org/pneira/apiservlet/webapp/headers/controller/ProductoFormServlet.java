@@ -23,22 +23,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * Formulario para el ingreso de Productos desde Jsp
- */
+
 @WebServlet("/productos/form")
 public class ProductoFormServlet extends HttpServlet {
-    // Todo doGet : obtener List Categorias, need : productoService, invocar el listarCategorias lo pasamos a
-    // Todo :         a la jsp de la vista, y luego le hacemos un forward a la jsp del formulario a crear
 
-    @Inject  //    @Named("defecto")
+
+    @Inject
     @ProductosServicesPrincipal
     private ProductoService serviceProd;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService serviceProd = new ProductoServiceJdbcImpl(conn);  */
-            // valueOf devuele la clase Wrapper en cambio parseLong devuele  un primitivo
+
         long id;
         try {
             id = Long.parseLong(req.getParameter("id"));
@@ -52,9 +47,7 @@ public class ProductoFormServlet extends HttpServlet {
             if ( o.isPresent()){
                 producto = o.get();
             }
-        }/*else {
-            producto.setId(id);
-        }*/
+        }
         req.setAttribute("title",req.getAttribute("title") + " : Formulario Productos");
         req.setAttribute("categorias", serviceProd.listarCategoria());
         req.setAttribute("producto",producto);
@@ -63,8 +56,6 @@ public class ProductoFormServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      /*  Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService serviceProd = new ProductoServiceJdbcImpl(conn);*/
 
             String nombre = req.getParameter("nombre");
             Integer precio;
@@ -99,7 +90,7 @@ public class ProductoFormServlet extends HttpServlet {
                 errores.put("categoria", "La Categoria es requerido");
             }
 
-            LocalDate fecha;  // si la fecha viene vacio o null
+            LocalDate fecha;
             try {
                 fecha = LocalDate.parse(fechaStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             } catch (DateTimeParseException e) {
@@ -112,14 +103,14 @@ public class ProductoFormServlet extends HttpServlet {
                 id = 0L;
             }
             Producto producto = new Producto(nombre, new Categoria(categoriaId), precio, sku, fecha);
-            producto.setId(id); // clase 450 : en el caso que sea null -> se formateo que sea 0, asi no rebota en el JSP
+            producto.setId(id);
 
             if (errores.isEmpty()) {
                 serviceProd.guardar(producto);
                 resp.sendRedirect(req.getContextPath() + "/productos");
             } else {
                 req.setAttribute("errores", errores);
-                // se copio del doGet , para volver a refrescar los datos y no perderlos cuando sale un msj de error, con esto ya no ya
+
                 req.setAttribute("categorias", serviceProd.listarCategoria());
                 req.setAttribute("producto", producto);
                 req.setAttribute("title", req.getAttribute("title") + " : Formulario de Productos");
