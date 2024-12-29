@@ -13,12 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@SuppressWarnings("unused")
 @RepositoryQ   // <-- reemplazado @ApplicationScoped
 public class CategoriaRepositoryImpl implements Repository<Categoria>{
 
 
-    private Connection conn;  // aqui se maneja CDI por constructor
+    private final Connection conn;  // aqui se maneja CDI por constructor
 
+    @SuppressWarnings("unused")
     @Inject
     @Named("conn")
     public CategoriaRepositoryImpl(@MysqlConn Connection conn) {
@@ -57,6 +59,7 @@ public class CategoriaRepositoryImpl implements Repository<Categoria>{
 
     }
 
+    @SuppressWarnings("unused")
     @Override
     public void eliminar(Long id) throws SQLException {
 
@@ -64,9 +67,9 @@ public class CategoriaRepositoryImpl implements Repository<Categoria>{
 
 
     private static Categoria getCategoria(ResultSet rs) throws SQLException {
-        Categoria p = new Categoria(
+        return new Categoria(
                 rs.getLong("id" ),
                 rs.getString( "nombre"));
-        return p;
+
     }
 }

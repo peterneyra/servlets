@@ -22,6 +22,9 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     //private ProductoRepositoryJdbcImpl repositoryJdbc;  //directo con jdbc
                                             // ahora usaremos el tipo de la interfaz repository
                                             // para que sea mas generico, usaremos generics
+
+
+@SuppressWarnings("unused")
     @Inject
     private Repository<Producto> repositoryProdJdbc;  // <<---- *** injectamos via interfaz bajo acoplamiento
     @Inject

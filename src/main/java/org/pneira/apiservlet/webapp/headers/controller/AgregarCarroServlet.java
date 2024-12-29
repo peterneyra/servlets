@@ -17,6 +17,7 @@ import org.pneira.apiservlet.webapp.headers.service.ProductoService;
 import java.io.IOException;
 import java.util.Optional;
 
+@SuppressWarnings("unused")
 @WebServlet("/agregar-carro")
 public class AgregarCarroServlet extends HttpServlet {
 

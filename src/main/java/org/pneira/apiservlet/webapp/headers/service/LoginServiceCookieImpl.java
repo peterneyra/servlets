@@ -14,9 +14,8 @@ public class LoginServiceCookieImpl implements LoginService{
     public Optional<String> getUsername(HttpServletRequest req) {
         Cookie[] arrayCookies = req.getCookies() != null ? req.getCookies(): new Cookie[0] ;
         //Arrays.asList(arryCookies).stream().filter( a,b -> a.getValue().contains("username"));
-        Optional<String> opt = Arrays.stream( arrayCookies).filter(a -> "username".equals(a.getName()))
-                .map( Cookie::getValue).findAny();   // c es lo que recorre, y recorre cookies, si vemos a q pertenece getValue -> Cookie
 
-        return opt;
+        return Arrays.stream( arrayCookies).filter(a -> "username".equals(a.getName()))
+                .map( Cookie::getValue).findAny();
     }
 }
